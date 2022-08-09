@@ -12,7 +12,7 @@ function PizzaBlock(props) {
         <div class="pizza-block__selector">
           <ul>
             <li class="active">тонкое</li>
-            <li>традиционное</li>
+            <li>традиционое</li>
           </ul>
           <ul>
             <li class="active">26 см.</li>
