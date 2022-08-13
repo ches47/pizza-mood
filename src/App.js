@@ -4,6 +4,7 @@ import Head from './components/Head';
 import Category from './components/Category';
 import Sort from './components/Sort';
 import PizzaBlock from './components/PizzaBlock';
+import Skeleton from './components/PizzaBlock/Skeleton';
 
 import './scss/app.scss';
 
@@ -30,7 +31,7 @@ function App() {
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
             {items.map((obj) => (
-              <PizzaBlock key={obj.id} {...obj} />
+              <Skeleton key={obj.id} {...obj} />
             ))}
           </div>
         </div>
