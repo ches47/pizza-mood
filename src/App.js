@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, test } from './redux/slices/filterSlice';
+
 import { Routes, Route } from 'react-router-dom';
 
 import Head from './components/Head';
@@ -14,18 +13,9 @@ export const SearchContext = React.createContext();
 
 function App() {
   const [searchValue, setSearchValue] = React.useState('');
-  const count = useSelector((state) => state.counter.count);
-  const dispatch = useDispatch();
 
   return (
     <div className="wrapper">
-      <button aria-label="Increment value" onClick={() => dispatch(test())}>
-        Increment
-      </button>
-      <span>{count}</span>
-      <button aria-label="Decrement value" onClick={() => dispatch(decrement())}>
-        Decrement
-      </button>
       <SearchContext.Provider value={{ searchValue, setSearchValue }}>
         <Head />
         <div className="content">
