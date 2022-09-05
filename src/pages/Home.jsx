@@ -1,4 +1,5 @@
 import React from 'react';
+import qs from 'qs'
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -12,6 +13,7 @@ import { SearchContext } from '../App';
 
 const Home = () => {
   const dispatch = useDispatch();
+
   const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
 
   const { searchValue } = React.useContext(SearchContext);
