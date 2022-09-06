@@ -47,16 +47,6 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  // React.useEffect(() => {
-  //   const queryString = qs.stringify({
-  //     sortProperty: sort.sortProperty,
-  //     categoryId,
-  //     currentPage,
-  //   });
-
-  //   navigate(`?${queryString}`);
-  // }, [categoryId, sort.sortProperty, currentPage]);
-
   const pizzas = items.map((obj) => <PizzaBlock key={obj.id} {...obj} />);
 
   const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);

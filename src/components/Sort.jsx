@@ -11,6 +11,7 @@ export const list = [
 function Sort({ value, onChangeSort }) {
   const dispatch = useDispatch();
   const sort = useSelector((state) => state.filter.sort);
+  const sortRef = React.useRef();
 
   const [isVisible, setIsVisible] = React.useState(true);
 
@@ -19,8 +20,16 @@ function Sort({ value, onChangeSort }) {
     setIsVisible(false);
   };
 
+  React.useEffect(() => {
+    document.body.addEventListener('click', (e) => {
+      if (!e.path.includes(sortRef.current)) {
+        setIsVisible(false);
+      }
+    });
+  }, []);
+
   return (
-    <div className="sort">
+    <div ref={sortRef} className="sort">
       <div className="sort__label">
         <svg
           width="10"
