@@ -54,7 +54,7 @@ const Home = () => {
   return (
     <div className="container">
       <div className="content__top">
-        <Category value={categoryId} onChangeCategory={(id) => onChangeCategory(id)} />
+        <Category value={categoryId} onChangeCategory={onChangeCategory} />
         <Sort />
       </div>
       <h2 className="content__title">Все пиццы</h2>

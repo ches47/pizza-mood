@@ -21,11 +21,17 @@ function Sort({ value, onChangeSort }) {
   };
 
   React.useEffect(() => {
-    document.body.addEventListener('click', (e) => {
+    const handleClickOutSide = (e) => {
       if (!e.path.includes(sortRef.current)) {
         setIsVisible(false);
       }
-    });
+    };
+
+    document.body.addEventListener('click', handleClickOutSide);
+
+    return () => {
+      document.body.removeEventListener('click', handleClickOutSide);
+    };
   }, []);
 
   return (
