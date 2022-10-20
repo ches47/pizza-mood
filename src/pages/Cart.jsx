@@ -35,7 +35,7 @@ const Cart = () => {
                 stroke-linejoin="round"
               />
             </svg>
-            Корзина dsdd
+            Корзина
           </h2>
           <div class="cart__clear">
             <svg
