@@ -11,7 +11,7 @@ function PizzaBlock({ id, title, price, imageUrl, sizes, types, rating }) {
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
 
-  const addedCount = cartItem ? cartItem : 0;
+  const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
     const item = {
@@ -20,7 +20,7 @@ function PizzaBlock({ id, title, price, imageUrl, sizes, types, rating }) {
       price,
       imageUrl,
       type: typeNames[activeType],
-      size: activeSize,
+      size: sizes[activeSize],
     };
     dispatch(addItem(item));
   };
@@ -53,7 +53,7 @@ function PizzaBlock({ id, title, price, imageUrl, sizes, types, rating }) {
           </ul>
         </div>
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price">от {price} $</div>
+          <div className="pizza-block__price">от {price}</div>
           <button onClick={onClickAdd} className="button button--outline button--add">
             <svg
               width="12"
